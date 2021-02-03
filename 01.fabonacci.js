@@ -18,7 +18,7 @@ console.log(fibonacciIterative(10));
 
 
 
-// Fibonacci Recarsive
+// Fibonacci Recursive
 
 function fibonacciRecursive(number){
     var arr = [1, 1]; 

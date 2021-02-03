@@ -23,3 +23,4 @@ console.log(mehnazHeight);
 
 mehnaz.age=2.2;
 console.log(mehnaz);
+
