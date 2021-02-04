@@ -66,7 +66,15 @@
 
 
 
-const mapArray = [2,5,9,8,4,3];
-const remainder = mapArray.map(x => x % 2);
+// const mapArray = [2,5,9,8,4,3];
+// const remainder = mapArray.map(x => x % 2);
 
-console.log(remainder);
+// console.log(remainder);
+
+
+
+const studentsName = ['Mehnaz', 'Mithu', 'Shuvon', 'Abdullah'];
+
+const nameLangth = studentsName.map(element => element.length);
+console.log(nameLangth);
+
