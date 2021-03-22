@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article>
+        <h3>article-1</h3>
+        <p class="author">author-1</p>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, doloribus! Ducimus
+            repudiandae a impedit odit est. Excepturi, dolore incidunt. Voluptates soluta neque voluptate repellat in.
+            Libero placeat minima ullam laboriosam!</p>
+    </article>
+    <article>
+        <h3>article-2</h3>
+        <p class="author">author-2</p>
+        <p class="description">Praesentium atque asperiores voluptatem voluptate at cum. Eius quos explicabo beatae aut
+            repellendus accusamus dolorum tempora perspiciatis dolor, odit, officia vero dolores sapiente porro velit
+            illum ducimus deleniti provident excepturi.</p>
+    </article>
+    <article>
+        <h3>article-3</h3>
+        <p class="author">author-3</p>
+        <p class="description">Ipsam voluptates perferendis eaque quod, mollitia quaerat ducimus esse officiis modi iste
+            ab, consequuntur illum unde et ullam natus atque. Amet cumque dolorum provident assumenda quod recusandae
+            illum at soluta.</p>
+    </article>
+
+
+    <script>
+        var authors = document.getElementsByClassName('author');
+        // console.log(authors);
+
+        for (let i = 0; i < authors.length; i++) {
+            const element = authors[i];
+            // console.log(element);
+            // console.log(element.innerText);
+            element.innerText = 'Best Author' + (i + 1);
+
+
+        }
+    </script>
+
+</body>
+
+</html>

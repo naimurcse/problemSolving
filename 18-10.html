@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="giftContent">
+        <ul id="giftList">
+            <li id="item1">Item-1</li>
+            <li id="item2">Item-2</li>
+            <li id="item3">Item-3</li>
+            <li id="item4">Item-4</li>
+            <li id="item5">Item-5</li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById("item1").addEventListener('click', function () {
+            console.log("Item One is a car.");
+        })
+        document.getElementById("item2").addEventListener('click', function () {
+            console.log("Item two is a watch.");
+            event.stopPropagation();
+        })
+        document.getElementById("giftList").addEventListener('click', function () {
+            console.log("Gift List from ui");
+        })
+    </script>
+</body>
+
+</html>

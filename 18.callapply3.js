@@ -5,9 +5,9 @@ const normalPerson = {
     fullName: function(){
         return this.firstName + ' ' + this.lastName;
     },
-    chargeBill: function(amount){
+    chargeBill: function(amount, tax){
         console.log(this);
-        this.salary = this.salary - amount;
+        this.salary = this.salary - amount - tax;
         return this.salary;
     }
 }
@@ -24,9 +24,25 @@ const minister ={
     salary: 50000
 }
 
-// normalPerson.chargeBill();
+const primeMinister ={
+    firstName: "Shekh",
+    lastName: "Hasina",
+    salary: 65000
+}
+
+// Bind
 const heroChargeBill = normalPerson.chargeBill.bind(heroPerson);
-heroChargeBill(1000);
-heroChargeBill(3000);
+heroChargeBill(1000, 10);
 console.log(heroPerson.salary);
+
+// Call
+normalPerson.chargeBill.call(minister, 14000, 10);   // Need comma for .call
+console.log(minister.salary);
+
+// Apply
+normalPerson.chargeBill.apply(primeMinister, [25000, 250]);    // Need array for .apply
+console.log(primeMinister.salary);
+
+
 console.log(normalPerson.salary);
+

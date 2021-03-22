@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="giftContent">
+        <h3 id='heading'>Click Me I will be red</h3>
+        <ul id="giftList">
+            <li class="item">Item-1</li>
+            <li class="item">Item-2</li>
+            <li class="item">Item-3</li>
+            <li class="item">Item-4</li>
+            <li class="item">Item-5</li>
+        </ul>
+        <button id="addNew">Add New</button>
+    </div>
+
+    <script>
+        function heading() {
+            let headingStyle = document.getElementById('heading');
+            headingStyle.style.color = '#ff0000';
+            headingStyle.style.border = "2px solid #0000FF";
+            headingStyle.style.padding = "20px";
+            headingStyle.style.textAlign = "center";
+        }
+
+        document.getElementById('heading').addEventListener('click', heading);
+
+        let giftItem = document.getElementsByClassName('item');
+
+        for (let i = 0; i < giftItem.length; i++) {
+            let item = giftItem[i];
+
+            // item.addEventListener('click', function (event) {
+            //     event.target.parentNode.removeChild(event.target);
+            // })
+
+        }
+
+        document.getElementById("addNew").addEventListener("click", function (event) {
+            const itemParent = document.getElementById('giftList');
+            const newItem = document.createElement('li');
+            newItem.innerText = 'New Gift';
+            itemParent.appendChild(newItem);
+        })
+
+        document.getElementById('giftList').addEventListener('click', function (event) {
+            // console.log(this, event.target);
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+</body>
+
+</html>
