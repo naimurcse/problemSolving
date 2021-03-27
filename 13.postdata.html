@@ -23,6 +23,10 @@
         document.getElementById("submit-btn").addEventListener("click", function () {
             const titleInput = document.getElementById("title-input").value;
             const bodyInput = document.getElementById("body-input").value;
+            const post = {
+                title: titleInput,
+                body: bodyInput
+            };
             nowPostData(post);
         })
 
