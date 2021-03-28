@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User</title>
+</head>
+
+<body>
+    <h2>User Name: <span id="userName"></span></h2>
+    <h3>Gender : <span id="gender"></span></h3>
+    <h4><a href="https://randomuser.me/documentation#format">Random User</a></h4>
+
+    <script>
+        fetch("https://randomuser.me/api/")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const user = data.results[0];
+                console.log(user);
+                const name = user.name;
+                console.log(name);
+                const userName = `${name.title} ${name.first} ${name.last}`;
+                console.log(userName);
+
+                document.getElementById("userName").innerText = userName;
+                document.getElementById("gender").innerText = user.gender;
+            });
+    </script>
+</body>
+
+</html>
