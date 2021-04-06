@@ -6,12 +6,151 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REST countries</title>
+
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .countries_info {
+            width: 25%;
+            float: left;
+            height: 150px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .country_content {
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            min-height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            box-shadow: 0 5px 25px -3.75px #00000024;
+        }
+
+        .country_content h1 {
+            color: #de658c;
+            padding-bottom: 8px;
+        }
+
+        .country_content h1:hover {
+            color: #e03169;
+            cursor: pointer;
+        }
+
+        .country_content h3 {
+            color: #363334;
+            padding-bottom: 8px;
+        }
+
+        /* Country Details */
+        .country-details {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 25px -3.75px #00000024;
+        }
+
+        .country-flag {
+            flex-grow: 1;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+        }
+
+        .country-details-content {
+            flex-grow: 2;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
+    <main>
+        <div class="container">
+            <div class="country-details">
+                <div class="country-flag">
+                    <img src="" alt="">
+                </div>
+                <div class="country-details-content">
+                    <h1> Bangladesh</h1>
+                    <h3> Dhaka</h3>
+                </div>
+            </div>
+            <div class="countries_info">
+                <div class="country_content">
+                    <h1> Bangladesh</h1>
+                    <h3> Dhaka</h3>
+                </div>
+            </div>
+            <div class="countries_info">
+                <div class="country_content">
+                    <h1> Bangladesh</h1>
+                    <h3> Dhaka</h3>
+                </div>
+            </div>
+            <div class="countries_info">
+                <div class="country_content">
+                    <h1> Bangladesh</h1>
+                    <h3> Dhaka</h3>
+                </div>
+            </div>
+            <div class="countries_info">
+                <div class="country_content">
+                    <h1> Bangladesh</h1>
+                    <h3> Dhaka</h3>
+                </div>
+            </div>
+            <div class="countries_info">
+                <div class="country_content">
+                    <h1> Bangladesh</h1>
+                    <h3> Dhaka</h3>
+                </div>
+            </div>
+            <div class="countries_info">
+                <div class="country_content">
+                    <h1> Bangladesh</h1>
+                    <h3> Dhaka</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <script>
-        console.log("Hello World");
+        fetch("https://restcountries.eu/rest/v2/all")
+            .then(res => res.json())
+            .then(data => countriesInfo(data));
+
+        const countriesInfo = countryInfo => {
+            console.log(countryInfo);
+
+            countryInfo.forEach(element => {
+                console.log(element);
+            });
+        }
     </script>
 </body>
 
