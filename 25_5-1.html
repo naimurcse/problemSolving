@@ -33,9 +33,9 @@
         .countries_info {
             width: 25%;
             float: left;
-            height: 150px;
-            padding: 15px;
-            margin-bottom: 15px;
+            height: 160px;
+            padding: 10px;
+            margin-bottom: 12px;
         }
 
         .country_content {
@@ -52,6 +52,8 @@
         .country_content h1 {
             color: #de658c;
             padding-bottom: 8px;
+            font-size: 22px;
+            font-weight: 700;
         }
 
         .country_content h1:hover {
@@ -62,6 +64,8 @@
         .country_content h3 {
             color: #363334;
             padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         /* Country Details */
@@ -71,6 +75,7 @@
             flex-wrap: wrap;
             margin-bottom: 20px;
             box-shadow: 0 5px 25px -3.75px #00000024;
+            display: none;
         }
 
         .country-flag {
@@ -100,41 +105,21 @@
                     <h3> Dhaka</h3>
                 </div>
             </div>
-            <div class="countries_info">
-                <div class="country_content">
-                    <h1> Bangladesh</h1>
-                    <h3> Dhaka</h3>
+            <div id="all-countries">
+
+                <!-- <div class="countries_info">
+                    <div class="country_content">
+                        <h1> Bangladesh</h1>
+                        <h3> Dhaka</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="countries_info">
-                <div class="country_content">
-                    <h1> Bangladesh</h1>
-                    <h3> Dhaka</h3>
-                </div>
-            </div>
-            <div class="countries_info">
-                <div class="country_content">
-                    <h1> Bangladesh</h1>
-                    <h3> Dhaka</h3>
-                </div>
-            </div>
-            <div class="countries_info">
-                <div class="country_content">
-                    <h1> Bangladesh</h1>
-                    <h3> Dhaka</h3>
-                </div>
-            </div>
-            <div class="countries_info">
-                <div class="country_content">
-                    <h1> Bangladesh</h1>
-                    <h3> Dhaka</h3>
-                </div>
-            </div>
-            <div class="countries_info">
-                <div class="country_content">
-                    <h1> Bangladesh</h1>
-                    <h3> Dhaka</h3>
-                </div>
+                <div class="countries_info">
+                    <div class="country_content">
+                        <h1> Bangladesh</h1>
+                        <h3> Dhaka</h3>
+                    </div>
+                </div> -->
+
             </div>
         </div>
     </main>
@@ -147,8 +132,18 @@
         const countriesInfo = countryInfo => {
             console.log(countryInfo);
 
-            countryInfo.forEach(element => {
-                console.log(element);
+            const allCountries = document.getElementById("all-countries");
+            countryInfo.forEach(country => {
+                console.log(country);
+                const countryDiv = document.createElement("div");
+                countryDiv.className = "countries_info";
+                countryDiv.innerHTML = `
+                    <div class="country_content">
+                        <h1> ${country.name}</h1>
+                        <h3> ${country.capital}</h3>
+                    </div>
+                `;
+                allCountries.appendChild(countryDiv);
             });
         }
     </script>
