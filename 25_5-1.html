@@ -75,7 +75,7 @@
             flex-wrap: wrap;
             margin-bottom: 20px;
             box-shadow: 0 5px 25px -3.75px #00000024;
-            display: none;
+            /* display: none; */
         }
 
         .country-flag {
@@ -89,6 +89,18 @@
             background: rgb(255, 255, 255);
             padding: 20px;
         }
+
+        .country-details-content ul {}
+
+        .country-details-content ul li {
+            list-style: none;
+        }
+
+        .country-flag img {
+            width: 200px;
+            max-width: 100%;
+            display: block;
+        }
     </style>
 </head>
 
@@ -96,14 +108,16 @@
 
     <main>
         <div class="container">
-            <div class="country-details">
-                <div class="country-flag">
-                    <img src="" alt="">
-                </div>
-                <div class="country-details-content">
-                    <h1> Bangladesh</h1>
-                    <h3> Dhaka</h3>
-                </div>
+            <div id="country_container">
+                <!-- <div class="country-details">
+                    <div class="country-flag">
+                        <img src="" alt="">
+                    </div>
+                    <div class="country-details-content">
+                        <h1> Bangladesh</h1>
+                        <h3> Dhaka</h3>
+                    </div>
+                </div> -->
             </div>
             <div id="all-countries">
 
@@ -139,12 +153,45 @@
                 countryDiv.className = "countries_info";
                 countryDiv.innerHTML = `
                     <div class="country_content">
-                        <h1> ${country.name}</h1>
+                        <h1 onclick="showDetails('${country.name}')"> ${country.name}</h1>
                         <h3> ${country.capital}</h3>
                     </div>
                 `;
                 allCountries.appendChild(countryDiv);
             });
+        }
+
+        const showDetails = detailsInfo => {
+            console.log(detailsInfo);
+            const url = `https://restcountries.eu/rest/v2/name/${detailsInfo}`;
+            fetch(url)
+                .then(res => res.json())
+                .then(data => countryDetails(data));
+        };
+
+        const countryDetails = country => {
+            const countryInfo = country[0];
+            console.log(countryInfo);
+
+            const countryContainer = document.getElementById("country_container");
+
+            const countryDiv = document.createElement("div");
+            countryDiv.className = "country-details";
+            countryDiv.innerHTML = `
+                    <div class="country-flag">
+                        <img src="${countryInfo.flag}" alt=""> 
+                    </div>
+                    <div class="country-details-content">
+                        <h1> ${countryInfo.name}</h1>
+                        <h3> ${countryInfo.capital}</h3>
+                        <ul>
+                            <li>Population: ${countryInfo.population}</li>
+                            <li>Region: ${countryInfo.region}</li>
+                            <li>language: ${countryInfo.languages[0].name}</li>
+                        </ul>
+                    </div>
+            `;
+            countryContainer.appendChild(countryDiv);
         }
     </script>
 </body>
