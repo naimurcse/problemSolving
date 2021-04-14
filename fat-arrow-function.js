@@ -19,4 +19,16 @@ const result = sum(5,8);
 console.log(result);
 
 
+// forEach
+const javascript = {
+    name:"JavaScript",
+    libraries:["React","Angular","Vue","jQuery"],
+    library: function() {
+        this.libraries.forEach(function(item){
+            console.log(item);
+        });
+    }
+}
+
+javascript.library();
 
