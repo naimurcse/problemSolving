@@ -25,10 +25,10 @@ const javascript = {
     libraries:["React","Angular","Vue","jQuery"],
     library: function() {
         this.libraries.forEach(function(item){
-            console.log(item);
+            console.log(`${this.name} loves ${item}`);
         });
     }
 }
-
+ 
 javascript.library();
 
