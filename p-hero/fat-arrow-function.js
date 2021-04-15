@@ -46,8 +46,8 @@ const javascript = {
         // console.log(this);
         
         this.libraries.forEach((item) => {
-            // console.log(this);
-            console.log(`${this.name} loves ${item}`);
+            console.log(this);
+            // console.log(`${this.name} loves ${item}`);
         });
     }
 }
