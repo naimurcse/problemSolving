@@ -10,3 +10,11 @@ const add = function(){
 
 const result = add(5,6,2,8);
 console.log(result);
+
+console.log("0sec")
+
+setTimeout(function(){
+    console.log("Thanks for waiting");
+},5000);
+
+console.log("5sec")
